@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<TitledPane fx:id="statusTitledPane" animated="false" expanded="false" minHeight="-Infinity" minWidth="196.0" prefWidth="196.0" text="UserName" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teetov.chat.client.control.StatusPaneController">
+  <content>
+    <AnchorPane minHeight="25.0" minWidth="0.0" prefHeight="25.0">
+         <children>
+            <Text fx:id="statusText" layoutX="15.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children></AnchorPane>
+  </content>
+</TitledPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="250.0" prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teetov.chat.client.control.RootController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Подключение">
+            <items>
+                  <MenuItem fx:id="startMenuItem" mnemonicParsing="false" onAction="#start" text="Подключиться" />
+                  <MenuItem fx:id="stopMenuItem" disable="true" mnemonicParsing="false" onAction="#stop" text="Отключиться" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Настройки">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#showServerWindow" text="Список серверов" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectName" text="Ввести имя" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

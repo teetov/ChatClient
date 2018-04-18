@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<servers>
+	<server>
+		<serverName>local</serverName>
+		<address>127.0.0.1</address>
+		<port>1234</port>
+	</server>
+	<server>
+		<serverName>google</serverName>
+		<address>255.0.0.1</address>
+		<port>1241251</port>
+	</server>
+	<servers>
+		<serverName>local</serverName>
+		<address>127.0.0.1</address>
+		<port>1234</port>
+	</servers>
+</servers>
