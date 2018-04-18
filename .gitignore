@@ -19,9 +19,9 @@
 *.rar
 
 # eclipse files
-*.iml
 .settings
 .classpath
+.project
 
 .git
 
