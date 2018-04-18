@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 import com.teetov.chat.message.Message;
 
 /**
- * Класс выполняет работу по получению и отправки сообщения на сервер.
+ * РљР»Р°СЃСЃ РІС‹РїРѕР»РЅСЏРµС‚ СЂР°Р±РѕС‚Сѓ РїРѕ РїРѕР»СѓС‡РµРЅРёСЋ Рё РѕС‚РїСЂР°РІРєРё СЃРѕРѕР±С‰РµРЅРёСЏ РЅР° СЃРµСЂРІРµСЂ.
  * @author  Aleksey Titov
  *
  */
@@ -33,9 +33,9 @@ public class ServerConnection implements Closeable {
 	}
 	
 	/**
-	 * Отправляет сообщение на сервер.
+	 * РћС‚РїСЂР°РІР»СЏРµС‚ СЃРѕРѕР±С‰РµРЅРёРµ РЅР° СЃРµСЂРІРµСЂ.
 	 * 
-	 * @param message сообщения для отправки
+	 * @param message СЃРѕРѕР±С‰РµРЅРёСЏ РґР»СЏ РѕС‚РїСЂР°РІРєРё
 	 * @throws IOException
 	 */
 	public synchronized void sendMessage(Message message) throws IOException {
@@ -45,9 +45,9 @@ public class ServerConnection implements Closeable {
 	}
 	
 	/**
-	 * Принимает сообщения от сервера.
+	 * РџСЂРёРЅРёРјР°РµС‚ СЃРѕРѕР±С‰РµРЅРёСЏ РѕС‚ СЃРµСЂРІРµСЂР°.
 	 * 
-	 * @return полученное сообщение
+	 * @return РїРѕР»СѓС‡РµРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ
 	 * @throws ClassNotFoundException
 	 * @throws IOException
 	 */
@@ -60,8 +60,8 @@ public class ServerConnection implements Closeable {
 	}
 
 	/**
-	 * Возвращает объект {@ java.net.Socket} этого соединения.
-	 * @return {@ Socket}, используемый для общения с сервером
+	 * Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕР±СЉРµРєС‚ {@ java.net.Socket} СЌС‚РѕРіРѕ СЃРѕРµРґРёРЅРµРЅРёСЏ.
+	 * @return {@ Socket}, РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РґР»СЏ РѕР±С‰РµРЅРёСЏ СЃ СЃРµСЂРІРµСЂРѕРј
 	 */
 	public Socket getSocket() {
 		return socket;

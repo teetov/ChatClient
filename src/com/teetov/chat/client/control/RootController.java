@@ -49,7 +49,7 @@ public class RootController implements ConnectionLifeCircle {
 	}
 	
 	/**
-	 * Создаёт и отображает окно управляния списком серверов.
+	 * РЎРѕР·РґР°С‘С‚ Рё РѕС‚РѕР±СЂР°Р¶Р°РµС‚ РѕРєРЅРѕ СѓРїСЂР°РІР»СЏРЅРёСЏ СЃРїРёСЃРєРѕРј СЃРµСЂРІРµСЂРѕРІ.
 	 */
 	@FXML
 	public void showServerWindow() {
@@ -63,7 +63,7 @@ public class RootController implements ConnectionLifeCircle {
 			AnchorPane pane = (AnchorPane) loader.load();
 			
 			Stage serversStage = new Stage();
-			serversStage.setTitle("Известные сервера");
+			serversStage.setTitle("РР·РІРµСЃС‚РЅС‹Рµ СЃРµСЂРІРµСЂР°");
 			serversStage.initOwner(rootStage);
 			serversStage.initModality(Modality.WINDOW_MODAL);
 			serversStage.setScene(new Scene(pane));
@@ -87,7 +87,7 @@ public class RootController implements ConnectionLifeCircle {
 	}
 	
 	/**
-	 * Создаёт и отображает окно ввода имени пользователя.
+	 * РЎРѕР·РґР°С‘С‚ Рё РѕС‚РѕР±СЂР°Р¶Р°РµС‚ РѕРєРЅРѕ РІРІРѕРґР° РёРјРµРЅРё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ.
 	 */
 	@FXML
 	public void selectName() {
@@ -96,8 +96,8 @@ public class RootController implements ConnectionLifeCircle {
 		
 		TextInputDialog dialog = new TextInputDialog(oldProp);
 		dialog.setTitle(oldProp);
-		dialog.setHeaderText("Надоело быть " + oldProp + "?");
-		dialog.setContentText("Введите новое имя:");
+		dialog.setHeaderText("РќР°РґРѕРµР»Рѕ Р±С‹С‚СЊ " + oldProp + "?");
+		dialog.setContentText("Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ РёРјСЏ:");
 		
 		Optional<String> response = dialog.showAndWait();
 		

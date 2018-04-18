@@ -52,29 +52,29 @@ public class ServerSelectController {
 	
 	private ObservableList<ServerDescrWrapper> observer = FXCollections.observableArrayList();
 	
-	private String notSelected = "Необходимо выбрать конкретный элемент";
+	private String notSelected = "РќРµРѕР±С…РѕРґРёРјРѕ РІС‹Р±СЂР°С‚СЊ РєРѕРЅРєСЂРµС‚РЅС‹Р№ СЌР»РµРјРµРЅС‚";
 	
 	public ServerSelectController() {}
 	
 	/**
-	 * Передача контроллеру объекта {@code Stage}, в котором он будет отображаться.
-	 * @param selectStage родетельский {@code Stage}
+	 * РџРµСЂРµРґР°С‡Р° РєРѕРЅС‚СЂРѕР»Р»РµСЂСѓ РѕР±СЉРµРєС‚Р° {@code Stage}, РІ РєРѕС‚РѕСЂРѕРј РѕРЅ Р±СѓРґРµС‚ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊСЃСЏ.
+	 * @param selectStage СЂРѕРґРµС‚РµР»СЊСЃРєРёР№ {@code Stage}
 	 */
 	public void setStage(Stage selectStage) {
 		serverSelectStage = selectStage;
 	}
 	
 	/**
-	 * Свидетельстует, произвёл ли пользователь изменения в списке серверов.
-	 * @return {@code true}, в списке серверов произошли изменения и его следует сохранить
+	 * РЎРІРёРґРµС‚РµР»СЊСЃС‚СѓРµС‚, РїСЂРѕРёР·РІС‘Р» Р»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РёР·РјРµРЅРµРЅРёСЏ РІ СЃРїРёСЃРєРµ СЃРµСЂРІРµСЂРѕРІ.
+	 * @return {@code true}, РІ СЃРїРёСЃРєРµ СЃРµСЂРІРµСЂРѕРІ РїСЂРѕРёР·РѕС€Р»Рё РёР·РјРµРЅРµРЅРёСЏ Рё РµРіРѕ СЃР»РµРґСѓРµС‚ СЃРѕС…СЂР°РЅРёС‚СЊ
 	 */
 	public boolean isChanged() {
 		return changed;
 	}
 	
 	/**
-	 * Передать котроллеру список описаний серверов, который необходимо отобразить.
-	 * @param servers список для взаимодействия
+	 * РџРµСЂРµРґР°С‚СЊ РєРѕС‚СЂРѕР»Р»РµСЂСѓ СЃРїРёСЃРѕРє РѕРїРёСЃР°РЅРёР№ СЃРµСЂРІРµСЂРѕРІ, РєРѕС‚РѕСЂС‹Р№ РЅРµРѕР±С…РѕРґРёРјРѕ РѕС‚РѕР±СЂР°Р·РёС‚СЊ.
+	 * @param servers СЃРїРёСЃРѕРє РґР»СЏ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ
 	 */
 	public void putServerList(List<ServerDescr> servers) {
 		observer.clear();
@@ -86,8 +86,8 @@ public class ServerSelectController {
 	}
 	
 	/**
-	 * Вернуть список описаний серверов, который получился после редактирования его пользователем.
-	 * @return обновлённый списов описаний
+	 * Р’РµСЂРЅСѓС‚СЊ СЃРїРёСЃРѕРє РѕРїРёСЃР°РЅРёР№ СЃРµСЂРІРµСЂРѕРІ, РєРѕС‚РѕСЂС‹Р№ РїРѕР»СѓС‡РёР»СЃСЏ РїРѕСЃР»Рµ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј.
+	 * @return РѕР±РЅРѕРІР»С‘РЅРЅС‹Р№ СЃРїРёСЃРѕРІ РѕРїРёСЃР°РЅРёР№
 	 */
 	public List<ServerDescr> getServersList() {
 		List<ServerDescr> result = new ArrayList<>();
@@ -112,12 +112,12 @@ public class ServerSelectController {
 	}
 	
 	/**
-	 * Отобразить выбранный в текущий момент сервер в соответствующем поле.
-	 * @param server описание выбранного в данный момент сервера для подключения
+	 * РћС‚РѕР±СЂР°Р·РёС‚СЊ РІС‹Р±СЂР°РЅРЅС‹Р№ РІ С‚РµРєСѓС‰РёР№ РјРѕРјРµРЅС‚ СЃРµСЂРІРµСЂ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРј РїРѕР»Рµ.
+	 * @param server РѕРїРёСЃР°РЅРёРµ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РІ РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚ СЃРµСЂРІРµСЂР° РґР»СЏ РїРѕРґРєР»СЋС‡РµРЅРёСЏ
 	 */
 	private void showCurrentServer(ServerDescr server) {
 		if(server == null) {
-			currentServerLabel.setText("Отсутствует");
+			currentServerLabel.setText("РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚");
 		} else {
 			StringBuilder text = new StringBuilder();
 			text.append(server.getServerName());
@@ -151,7 +151,7 @@ public class ServerSelectController {
 	}
 	
 	/**
-	 * Выполняется при нажатии кнопки обновления списка серверов.
+	 * Р’С‹РїРѕР»РЅСЏРµС‚СЃСЏ РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё РѕР±РЅРѕРІР»РµРЅРёСЏ СЃРїРёСЃРєР° СЃРµСЂРІРµСЂРѕРІ.
 	 */
 	@FXML
 	public void onReaload() {
@@ -163,7 +163,7 @@ public class ServerSelectController {
 	}
 
 	/**
-	 * Выполняется при нажатии кнопки дбавления нового описания сервера.
+	 * Р’С‹РїРѕР»РЅСЏРµС‚СЃСЏ РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё РґР±Р°РІР»РµРЅРёСЏ РЅРѕРІРѕРіРѕ РѕРїРёСЃР°РЅРёСЏ СЃРµСЂРІРµСЂР°.
 	 */
 	@FXML
 	public void onAdd() {
@@ -176,7 +176,7 @@ public class ServerSelectController {
 			AnchorPane pane = (AnchorPane) loader.load();
 			
 			Stage editStage = new Stage();
-			editStage.setTitle("Добавление нового сервера");
+			editStage.setTitle("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ СЃРµСЂРІРµСЂР°");
 			editStage.initModality(Modality.NONE);
 			editStage.initOwner(serverSelectStage);
 			editStage.setScene(new Scene(pane));
@@ -199,7 +199,7 @@ public class ServerSelectController {
 	}
 
 	/**
-	 * Выполняется при нажатии кнопки изменения конкретного описания сервера.
+	 * Р’С‹РїРѕР»РЅСЏРµС‚СЃСЏ РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё РёР·РјРµРЅРµРЅРёСЏ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РѕРїРёСЃР°РЅРёСЏ СЃРµСЂРІРµСЂР°.
 	 */
 	@FXML
 	public void onChange() {
@@ -221,7 +221,7 @@ public class ServerSelectController {
 			AnchorPane pane = (AnchorPane) loader.load();
 			
 			Stage editStage = new Stage();
-			editStage.setTitle("Редактирование сервера");
+			editStage.setTitle("Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ СЃРµСЂРІРµСЂР°");
 			editStage.initModality(Modality.NONE);
 			editStage.initOwner(serverSelectStage);
 			editStage.setScene(new Scene(pane));
@@ -244,7 +244,7 @@ public class ServerSelectController {
 	}
 
 	/**
-	 * Выполняется при нажатии кнопки удаления конеретного описания сервера.
+	 * Р’С‹РїРѕР»РЅСЏРµС‚СЃСЏ РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё СѓРґР°Р»РµРЅРёСЏ РєРѕРЅРµСЂРµС‚РЅРѕРіРѕ РѕРїРёСЃР°РЅРёСЏ СЃРµСЂРІРµСЂР°.
 	 */
 	@FXML
 	public void onDelete() {
@@ -260,7 +260,7 @@ public class ServerSelectController {
 	}
 	
 	/**
-	 * Выполняется при нажатии кнопки завершения работы со списком описаний серверов.
+	 * Р’С‹РїРѕР»РЅСЏРµС‚СЃСЏ РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё Р·Р°РІРµСЂС€РµРЅРёСЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРїРёСЃРєРѕРј РѕРїРёСЃР°РЅРёР№ СЃРµСЂРІРµСЂРѕРІ.
 	 */
 	@FXML
 	public void onClose() {

@@ -10,10 +10,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * Класс-обёртка над {@code ServerDescr}. 
- * Преобразует его основные параметры для использование в FX таблице.
- * Так же расширяет базовый {@code ServerDescr} функциональностью проверки текущего сотояния сервера 
- * (из пакета {@code com.teetov.chat.connection.test}).
+ * РљР»Р°СЃСЃ-РѕР±С‘СЂС‚РєР° РЅР°Рґ {@code ServerDescr}. 
+ * РџСЂРµРѕР±СЂР°Р·СѓРµС‚ РµРіРѕ РѕСЃРЅРѕРІРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ РІ FX С‚Р°Р±Р»РёС†Рµ.
+ * РўР°Рє Р¶Рµ СЂР°СЃС€РёСЂСЏРµС‚ Р±Р°Р·РѕРІС‹Р№ {@code ServerDescr} С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕСЃС‚СЊСЋ РїСЂРѕРІРµСЂРєРё С‚РµРєСѓС‰РµРіРѕ СЃРѕС‚РѕСЏРЅРёСЏ СЃРµСЂРІРµСЂР° 
+ * (РёР· РїР°РєРµС‚Р° {@code com.teetov.chat.connection.test}).
  * 
  * @author  Aleksey Titov
  *
@@ -27,20 +27,20 @@ public class ServerDescrWrapper {
 	private final StringProperty isPassword;
 	
 	/**
-	 * Показывает, требуется ли заново провести проверку доступности сервера или достать закешированные значения.
-	 * {@code true} - вернуть хранящееся значение, {@code false} - попытаться установить тестовое соединение.
+	 * РџРѕРєР°Р·С‹РІР°РµС‚, С‚СЂРµР±СѓРµС‚СЃСЏ Р»Рё Р·Р°РЅРѕРІРѕ РїСЂРѕРІРµСЃС‚Рё РїСЂРѕРІРµСЂРєСѓ РґРѕСЃС‚СѓРїРЅРѕСЃС‚Рё СЃРµСЂРІРµСЂР° РёР»Рё РґРѕСЃС‚Р°С‚СЊ Р·Р°РєРµС€РёСЂРѕРІР°РЅРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ.
+	 * {@code true} - РІРµСЂРЅСѓС‚СЊ С…СЂР°РЅСЏС‰РµРµСЃСЏ Р·РЅР°С‡РµРЅРёРµ, {@code false} - РїРѕРїС‹С‚Р°С‚СЊСЃСЏ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ С‚РµСЃС‚РѕРІРѕРµ СЃРѕРµРґРёРЅРµРЅРёРµ.
 	 */
 	private volatile boolean updated = false;
 	/**
-	 * {@code true} означает, что попытка установить соединение производится в данный момент.
+	 * {@code true} РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ РїРѕРїС‹С‚РєР° СѓСЃС‚Р°РЅРѕРІРёС‚СЊ СЃРѕРµРґРёРЅРµРЅРёРµ РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РІ РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚.
 	 */
 	private volatile boolean processCheckInfo = false;
 	
-	private final String UNKNOWN = "Неизвестно";
-	private final String PASSWORD = "Требуется";
-	private final String WITHOUT_PASSWORD = "Не требуется";
-	private final String ACTIVE = "Доступен";
-	private final String NOT_ACTIVE = "Не в сети";
+	private final String UNKNOWN = "РќРµРёР·РІРµСЃС‚РЅРѕ";
+	private final String PASSWORD = "РўСЂРµР±СѓРµС‚СЃСЏ";
+	private final String WITHOUT_PASSWORD = "РќРµ С‚СЂРµР±СѓРµС‚СЃСЏ";
+	private final String ACTIVE = "Р”РѕСЃС‚СѓРїРµРЅ";
+	private final String NOT_ACTIVE = "РќРµ РІ СЃРµС‚Рё";
 	
 	ServerDescrWrapper(String name, String ipAddress, int port) {
 		this.serverName = new SimpleStringProperty(name);

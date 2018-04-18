@@ -27,8 +27,8 @@ public class ConnectionBuilderApp implements ConnectionBuilder {
 		System.out.println(serverDescr);
 		
 		if(serverDescr == null) {
-			manager.alert("Подключение невозможно", "Сервер не выбран",
-					"Настройки > Список срверов > Выбрать один из существующих или ввести новый");
+			manager.alert("РџРѕРґРєР»СЋС‡РµРЅРёРµ РЅРµРІРѕР·РјРѕР¶РЅРѕ", "РЎРµСЂРІРµСЂ РЅРµ РІС‹Р±СЂР°РЅ",
+					"РќР°СЃС‚СЂРѕР№РєРё > РЎРїРёСЃРѕРє СЃСЂРІРµСЂРѕРІ > Р’С‹Р±СЂР°С‚СЊ РѕРґРёРЅ РёР· СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёС… РёР»Рё РІРІРµСЃС‚Рё РЅРѕРІС‹Р№");
 			return null;
 		}
 		
@@ -36,8 +36,8 @@ public class ConnectionBuilderApp implements ConnectionBuilder {
 		System.out.println(name);
 		String checkName = PropertyHolder.isCorrectUserName(name);
 		if(checkName.length() > 0) {
-			manager.alert("Подключение невозможно", checkName, 
-					"Настройки > Выбрать имя > Ввести новое имя");
+			manager.alert("РџРѕРґРєР»СЋС‡РµРЅРёРµ РЅРµРІРѕР·РјРѕР¶РЅРѕ", checkName, 
+					"РќР°СЃС‚СЂРѕР№РєРё > Р’С‹Р±СЂР°С‚СЊ РёРјСЏ > Р’РІРµСЃС‚Рё РЅРѕРІРѕРµ РёРјСЏ");
 			return null;
 		}
 
@@ -46,8 +46,8 @@ public class ConnectionBuilderApp implements ConnectionBuilder {
 			connection = ServerConnectionFactory.getServerConnection(serverDescr);
 		} catch (ConnectionFailed e) {
 			LogManager.getLogger().error("Server {} not avalieble", serverDescr);
-			manager.alert("Подключение невозможно", "Выбранный сервер недоступен", 
-					"Настройки > Список срверов > Выбрать один из существующих или ввести новый");
+			manager.alert("РџРѕРґРєР»СЋС‡РµРЅРёРµ РЅРµРІРѕР·РјРѕР¶РЅРѕ", "Р’С‹Р±СЂР°РЅРЅС‹Р№ СЃРµСЂРІРµСЂ РЅРµРґРѕСЃС‚СѓРїРµРЅ", 
+					"РќР°СЃС‚СЂРѕР№РєРё > РЎРїРёСЃРѕРє СЃСЂРІРµСЂРѕРІ > Р’С‹Р±СЂР°С‚СЊ РѕРґРёРЅ РёР· СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёС… РёР»Рё РІРІРµСЃС‚Рё РЅРѕРІС‹Р№");
 			return null;
 		}
 
