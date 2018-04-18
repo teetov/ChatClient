@@ -30,7 +30,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.teetov.chat.client.ClientMain</mainClass>
+							<mainClass>com.teetov.chat.client.ClientMainApp</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
