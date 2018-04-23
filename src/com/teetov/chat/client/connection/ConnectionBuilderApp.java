@@ -2,6 +2,7 @@ package com.teetov.chat.client.connection;
 
 import java.io.IOException;
 import java.net.Socket;
+import java.net.URLEncoder;
 
 import org.apache.logging.log4j.LogManager;
 
@@ -23,8 +24,7 @@ public class ConnectionBuilderApp implements ConnectionBuilder {
 	
 	@Override
 	public Connection getConnection() throws IOException {
-		ServerDescr serverDescr = PropertyHolder.getLastServer();
-		System.out.println(serverDescr);
+		ServerDescr serverDescr = PropertyHolder.getCurrentServer();
 		
 		if(serverDescr == null) {
 			manager.alert("Подключение невозможно", "Сервер не выбран",
@@ -33,7 +33,7 @@ public class ConnectionBuilderApp implements ConnectionBuilder {
 		}
 		
 		String name = PropertyHolder.getUserName();
-		System.out.println(name);
+		
 		String checkName = PropertyHolder.isCorrectUserName(name);
 		if(checkName.length() > 0) {
 			manager.alert("Подключение невозможно", checkName, 

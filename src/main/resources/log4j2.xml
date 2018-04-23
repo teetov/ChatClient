@@ -11,11 +11,16 @@
 			<PatternLayout>
 				<PatterN>%d [%t] %c{2} : %msg %ex%n</PatterN>
 			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="2 MB" />
+				<TimeBasedTriggeringPolicy />
+			</Policies>
 		</RollingFile>
 	</Appenders>
 	<Loggers>
 		<Root level="ALL">
-			<AppenderRef ref="Sout" />
+			<AppenderRef ref="RollingFile" />
 		</Root>
 	</Loggers>
 </Configuration>

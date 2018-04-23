@@ -68,6 +68,9 @@ public class Connection implements Closeable {
 		} catch (Exception e) {
 			logger.error("Message was not sent", e);
 			phase.terminated();
+			
+			dialog.showInfo("Соединение с сервером разорвано");
+			
 			stop();
 			close();
 			return;

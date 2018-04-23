@@ -31,6 +31,10 @@ public class DialogChatPanel implements Dialog {
 			public void run() {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setContentText(info);	
+				
+				alert.setTitle("Внимание");
+				
+				alert.showAndWait();
 			}
 		});	
 		

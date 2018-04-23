@@ -15,8 +15,8 @@ import javax.xml.bind.Unmarshaller;
 import org.apache.logging.log4j.LogManager;
 
 /**
- *  ласс содержит дл¤ чтони¤ и записи свойст подключени¤.
- * “аких как им¤ клиента, список извесных серверов и сведени¤ о последнем использованом сервере.
+ *  Класс содержит для чтония и записи свойств подключения.
+ * Таких как имя клиента, список извесных серверов и сведения о последнем использованом сервере.
  * 
  * @author  Aleksey Titov
  *
@@ -57,38 +57,38 @@ public class PropertyHolder {
 	}
 	
 	/**
-	 * ѕолучить ранее введЄнное им¤ пользовател¤.
-	 * @return им¤ пользовател¤ либо {@code null} в случае отсустви¤ записи
+	 * Получить ранее введённое имя пользователя.
+	 * @return имя пользователя либо {@code null} в случае отсуствия записи
 	 */
 	public static String getUserName() {
 		return getProp(nameProp);
 	}
 
 	/**
-	 * —охран¤ет им¤ пользовател¤
-	 * @param name новое им¤
+	 * Сохраняет имя пользователя.
+	 * @param name новое имя
 	 */
 	public static void setUserName(String name) {
 		setProp(nameProp, name);
 	}
 	
 	/**
-	 * ѕровер¤ет можно ли использовать строку в качестве имени пользовател¤.
-	 * @param name провер¤ема¤ стока
+	 * Пѕроверяет можно ли использовать строку в качестве имени пользователя.
+	 * @param name проверяемая стока
 	 * @return строку с описанием причины отказа или пустую строку в случае прохождени¤ всех проверок
 	 */
 	public static String isCorrectUserName(String name) {
 		if(name == null || name.equals(""))
-			return "»м¤ не может быть пустым";
+			return "имя не может быть пустым";
 		
 		if(name.startsWith("server")) 
-			return "»м¤ не может начинатьс¤ со слова server";
+			return "имя не может начинаться со слова server";
 			
 		return "";
 	}
 	
 	/**
-	 * —охран¤ет сервер, к которому производилось последнее подключение.
+	 * Сохраняет сервер, к которому производилось последнее подключение.
 	 * @param server объект, содержащий сведени¤ о последнем сервере
 	 */
 	public static void setLastServer(ServerDescr server) {
@@ -98,10 +98,10 @@ public class PropertyHolder {
 	}
 	
 	/**
-	 * ¬озвращает сервер, к которому производилось последнее подключение.
-	 * @return объект, содержащий сведени¤ о последнем сервере либо {@code null} если данные отсутствуют
+	 * Возвращает сервер, выбранный в какчестве основного для подключения.
+	 * @return объект, содержащий сведения о последнем сервере либо {@code null}, если данные отсутствуют
 	 */
-	public static ServerDescr getLastServer() {
+	public static ServerDescr getCurrentServer() {
 		String name, address, port;
 		name = getProp(lastServerName);
 		address = getProp(lastServerAddess);
@@ -114,7 +114,7 @@ public class PropertyHolder {
 	}
 	
 	/**
-	 * ¬озвращает список известных серверов.
+	 * Возвращает список известных серверов.
 	 * @return список ранее добавленных серверов или пустой, если записей не обнаружено
 	 */
 	public static List<ServerDescr> getServers() { 
@@ -134,7 +134,7 @@ public class PropertyHolder {
 	}
 	
 	/**
-	 * —охран¤ет переданный список серверов в использовани¤ в будующем.
+	 * Сохраяет переданный список серверов в использования в будующем.
 	 * @param servers список серверов, который нужно сохранить
 	 */
 	public static void saveServers(List<ServerDescr> servers) {

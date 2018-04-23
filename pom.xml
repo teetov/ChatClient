@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.teetov.chat</groupId>
 	<artifactId>client</artifactId>
-	<version>0.2.1-SNAPSHOT</version>
+	<version>0.2.1</version>
 	<name>ChatClient</name>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -35,8 +35,23 @@
 					</archive>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
 		</plugins>
 	</build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.teetov.chat</groupId>
@@ -54,4 +69,8 @@
 			<version>2.11.0</version>
 		</dependency>
 	</dependencies>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 </project>

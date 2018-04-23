@@ -219,6 +219,7 @@ public class StageManager implements ConnectionController, ConnectionLifeCircle 
 			public void run() {
 
 				javafx.scene.control.TextInputDialog dialog = new javafx.scene.control.TextInputDialog("");
+				dialog.setTitle("");
 				dialog.setHeaderText(info);
 
 				Optional<String> result = dialog.showAndWait();

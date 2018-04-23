@@ -30,13 +30,10 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	private StageManager manager;
 
 	/**
-	 * Максимальное количество одновременно отображающихся сообщений.
+	 * РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕРѕР±С‰РµРЅРёР№, РїРѕРєР°Р·С‹РІР°РµРјРѕРµ РѕРґРЅРѕРІСЂРµРµРЅРЅРѕ.
 	 */
 	private final int MAX_MESSAGES = 1000;
 
-	/**
-	 * Множество контроллеров, управляющих отображением статуса конкретного пользователя
-	 */
 	private Set<StatusPaneController> statusPanes = new HashSet<>();
 
 	@FXML
@@ -73,7 +70,7 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	private Label currentStatusLabel;
 
 	/**
-	 * Скрывать статусы добавляющихся пользователей
+	 * РЎРєСЂС‹РІР°С‚СЊ Р»Рё СЃС‚Р°С‚СѓСЃС‹ РґСЂСѓРіРёС… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
 	 */
 	private boolean hideStatus = false;
 
@@ -84,7 +81,7 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 	
 	/**
-	 * Добавляет текст нового сообщения на панель сообщений
+	 * Р”РѕР±РІР°С‚СЊ РЅРѕРІРѕРµРµ СЃРѕРѕР±С‰РµРЅРёРµ РЅР° РїР°РЅРµР»СЊ СЃРѕРѕР±С‰РµРЅРёР№.
 	 * @param text
 	 */
 	public void addText(String text) {
@@ -107,7 +104,7 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 
 	/**
-	 * Закрывает текущее соединение.
+	 * Р—Р°РєС‚СЂС‹С‚СЊ С‚РµРєСѓС‰РµРµ СЃРѕРµРґРёРЅРµРЅРёРµ.
 	 */
 	@FXML
 	public void closeConnection() {
@@ -115,7 +112,7 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 
 	/**
-	 * Предоставляет доступ к контейнеру, в котором отбражаются статусы пользователей.
+	 * Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕРЅС‚РµР№РЅРµСЂ, РІ РєРѕС‚РѕСЂРѕРј РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ СЃС‚Р°С‚СѓСЃС‹ РґСЂСѓРіРёС… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№.
 	 * @return
 	 */
 	public VBox getStatusesVBox() {
@@ -123,7 +120,8 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 
 	/**
-	 * Переключает режим отображения статусов (свернуть/развернуть). И отображает в соответствии с выбором.
+	 * РџРµСЂРµРєР»СЋС‡РµРЅРёРµ СЂРµР¶РёРјР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃС‚СѓС‚СѓСЃРѕРІ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ (СЃРєСЂС‹С‚С‹Рµ/РїРѕРєР°Р·С‹РІР°РµРјС‹Рµ). 
+	 * Р’Р»РёСЏРµС‚ РЅР° С‚РµРєСѓС‰РёРµ Рё РґРѕР±Р°РІР»СЏРµРјС‹Рµ РІРїРѕСЃР»РµРґСЃС‚РІРёРё СЃС‚Р°С‚СѓСЃРЅС‹Рµ РїР°РЅРµР»Рё.
 	 */
 	@FXML
 	public void hideStatusToggle() {
@@ -136,16 +134,16 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 
 	/**
-	 * Информирует о текущем режиме отображения статусов (свернутые/развернутые).
-	 * @return
+	 * Р’РѕР·РІР°СЂР°С‰Р°РµС‚ С‚РµРєСѓС‰РёР№ СЂРµР¶РёРј РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃС‚СѓС‚СѓСЃРѕРІ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ (СЃРєСЂС‹С‚С‹Рµ/РїРѕРєР°Р·С‹РІР°РµРјС‹Рµ).
+	 * @return {@code true}, РµСЃР»Рё СЃС‚Р°С‚С‹СЃС‹ СЃРєСЂС‹С‚С‹
 	 */
 	public boolean isHidingStatuses() {
 		return hideStatus;
 	}
 	
 	/**
-	 * Считывает выбранный в данный момент статус из соответствующего меню и отправляет его на сервер.
-	 * Выводит выбранный статус в соответствующее место, для демонстрации пользователю.
+	 * РЎС‡РёС‚С‹РІР°РµС‚ РЅРѕРІС‹Р№ СЃС‚Р°С‚СѓСЃ РёР· РјРµРЅСѓ РІС‹Р±РѕСЂР° СЃС‚Р°С‚СѓСЃРѕРІ.
+	 * РћС‚РїСЂР°РІР»СЏРµС‚ РїРѕР»СѓС‡РµРЅРЅС‹Р№ СЂРµР·СѓР»СЊС‚Р°С‚ РЅР° СЃРµСЂРІРµСЂ.
 	 */
 	@FXML
 	public void choiceStatus() {
@@ -163,7 +161,8 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 
 	/**
-	 * Подготаливает меню выбра статуса, заполняя его доступными вариантами, предоставленными
+	 * РџСЂРѕРёР·РІРѕРґРёС‚ РїСЂРёРіРѕС‚РѕРІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ РјРµРЅСЋ РІС‹Р±РѕСЂР° СЃС‚Р°С‚СѓСЃРѕРІ.
+	 * Р­Р»РµРјРµРЅС‚С‹ РїСЂРµРґРѕСЃС‚Р°РІР»СЏСЋС‚СЃСЏ 
 	 * {@code com.teetov.chat.message.StatusList.getAvailebelStatuses()}. 
 	 */
 	private void prepereChoiceBox() {
@@ -179,9 +178,8 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 
 	/**
-	 * Читает текст из поля ввода и передаёт его {@code Connection.send()} для отправки на сервер.
-	 * Метод очищает поле ввода, а затем пытается вернуть ему фокус,
-	 *  если он был перемещён.
+	 * Р§РёС‚Р°РµС‚ СЃРѕРґРµСЂР¶РёРјРѕРµ РїР°РЅРµР»Рё РІРІРѕРґР° Рё РѕС‚РїСЂР°РІР»СЏРµС‚ РЅР° СЃРµСЂРІРµСЂ.
+	 * РџР°РЅРµР»СЊ РїРѕСЃР»Рµ СЌС‚РѕРіРѕ РѕС‡РёС‰Р°РµС‚СЃСЏ Рё РµР№ РІРѕР·РІСЂР°С‰Р°РµС‚СЃСЏ С„РѕРєСѓСЃ.
 	 */
 	@FXML
 	public void readAndSend() {
@@ -215,8 +213,8 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 
 	/**
-	 * Делает неактивной панель ввода сообщения и относящееся к ней кнопки.
-	 * @param disable {@code true}, чтобы отключить панель ввода. 
+	 * Р”РµР»Р°РµС‚ РїР°РЅРµР»СЊ РІРІРѕРґР° РЅРµР°РєС‚РёРІРЅРѕР№.
+	 * @param disable 
 	 */
 	public void disableInputPanel(boolean desable) {
 		inputPanel.setDisable(desable);
@@ -224,14 +222,14 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 
 	/**
-	 * Польностью очищает панель отображения статусов пользователей от её содержимого.
+	 * РћС‡РёС‰Р°РµС‚ РїР°РЅР°Р»СЊ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃС‚Р°С‚СѓСЃРѕРІ РѕС‚ РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ.
 	 */
 	public void clearStatusList() {
 		statusesVBox.getChildren().clear();
 	}
 
 	/**
-	 * Делает неактивной панель выбора статусов.
+	 * Р”РµР»Р°РµС‚ РїР°РЅРµР»СЊ СЃС‚Р°С‚СѓСЃРѕРІ РЅРµР°РєС‚РёРІРЅРѕР№.
 	 * @param disable
 	 */
 	public void disableStatusPane(boolean disable)  {
@@ -239,7 +237,7 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 	
 	/**
-	 * Добавляет контроллер, управляющий отображением статуса конретного пользователя.
+	 * Р”РѕР±Р°РІР»СЏРµС‚ РЅРѕРІС‹Р№ СЃС‚Р°С‚СѓСЃ (РµРіРѕ РєРѕРЅС‚СЂР°Р»Р»РµСЂ), РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РїР°РЅРµР»СЊ.
 	 * @param controller
 	 */
 	public void addStatusPaneController(StatusPaneController controller) {
@@ -247,7 +245,7 @@ public class ChatPanelController implements  ConnectionLifeCircle {
 	}
 	
 	/**
-	 * Удаляет контроллер, управляющий отображением статуса конретного пользователя.
+	 * РЈРґР°Р»СЏРµС‚ СЃС‚Р°С‚СѓСЃ (РµРіРѕ РєРѕРЅС‚СЂР°Р»Р»РµСЂ), СЃ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµР№ РїР°РЅРµР»Рё.
 	 * @param controller
 	 */
 	public void removeStatusPaneController(StatusPaneController controller) {

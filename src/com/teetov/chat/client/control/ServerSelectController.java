@@ -108,7 +108,7 @@ public class ServerSelectController {
 		whithPassword.setCellValueFactory(cellData -> cellData.getValue().getPasswordProperty());
 		
 		serversTable.setItems(observer);
-		showCurrentServer(PropertyHolder.getLastServer());
+		showCurrentServer(PropertyHolder.getCurrentServer());
 	}
 	
 	/**

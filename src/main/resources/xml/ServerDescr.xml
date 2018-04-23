@@ -3,7 +3,7 @@
 	<server>
 		<serverName>local</serverName>
 		<address>127.0.0.1</address>
-		<port>1234</port>
+		<port>34543</port>
 	</server>
 	<server>
 		<serverName>google</serverName>
