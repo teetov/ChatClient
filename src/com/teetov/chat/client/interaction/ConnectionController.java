@@ -9,7 +9,7 @@ package com.teetov.chat.client.interaction;
  *
  */
 public interface ConnectionController {
-	PhaseListener getPhaseListener();
-	
-	Dialog getDialog();
+    PhaseListener getPhaseListener();
+    
+    Dialog getDialog();
 }

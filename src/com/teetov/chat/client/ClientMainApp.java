@@ -7,20 +7,20 @@ import javafx.stage.Stage;
 
 public class ClientMainApp extends Application {
 
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
 
-	@Override
-	public void start(Stage primaryStage) throws Exception {
+    @Override
+    public void start(Stage primaryStage) throws Exception {
 
-		primaryStage.setTitle("Chat");
-		StageManager mainStage = new StageManager(primaryStage);
-		
-		mainStage.initRoot();
-		mainStage.initChatPanel();
-		
-	}
+        primaryStage.setTitle("Chat");
+        StageManager mainStage = new StageManager(primaryStage);
+        
+        mainStage.initRoot();
+        mainStage.initChatPanel();
+        
+    }
 
 }

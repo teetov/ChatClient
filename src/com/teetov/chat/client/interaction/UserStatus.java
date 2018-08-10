@@ -11,15 +11,15 @@ package com.teetov.chat.client.interaction;
  *
  */
 public interface UserStatus {
-	
-	/**
-	 * Изменяет отображение текущего статуса
-	 * @param newStatus новое статусное собщение
-	 */
-	void setNewStatus(String newStatus);
-	
-	/**
-	 * Команда прекратить отображение пользователя и его статуса в списке активных в данный клиентов.
-	 */
-	void exit();
+    
+    /**
+     * Изменяет отображение текущего статуса
+     * @param newStatus новое статусное собщение
+     */
+    void setNewStatus(String newStatus);
+    
+    /**
+     * Команда прекратить отображение пользователя и его статуса в списке активных в данный клиентов.
+     */
+    void exit();
 }

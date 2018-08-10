@@ -6,20 +6,20 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.text.Text;
 
 public class StatusPaneController {
-	@FXML
-	private TitledPane statusTitledPane;
-	
-	@FXML
-	private Text statusText;
-	
-	@FXML
-	public void initialize() {}
-	
-	public void setStatusText(String text) {
-		statusText.setText(text);
-	}
+    @FXML
+    private TitledPane statusTitledPane;
+    
+    @FXML
+    private Text statusText;
+    
+    @FXML
+    public void initialize() {}
+    
+    public void setStatusText(String text) {
+        statusText.setText(text);
+    }
 
-	public TitledPane getStatusTitledPane() {
-		return statusTitledPane;
-	}	
+    public TitledPane getStatusTitledPane() {
+        return statusTitledPane;
+    }    
 }

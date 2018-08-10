@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "servers")
 public class ServersStore {
-	
-	@XmlElement
-	private List<ServerDescr> server;
-	
-	public List<ServerDescr> getServers() {
-		return server;
-	}
-	
-	public void setServers(List<ServerDescr> servers) {
-		server = servers;
-	}
-	
+    
+    @XmlElement
+    private List<ServerDescr> server;
+    
+    public List<ServerDescr> getServers() {
+        return server;
+    }
+    
+    public void setServers(List<ServerDescr> servers) {
+        server = servers;
+    }
+    
 }
